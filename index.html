@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fbf7f4" />
+  <title>Dress Finder — Find your look</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#" aria-label="Dress Finder home">
+      <span class="logo-mark">d</span>
+      dress<span>finder</span>
+    </a>
+    <span class="tagline">A little style, a lot easier.</span>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="eyebrow">YOUR NEXT FAVORITE LOOK</p>
+      <h1>See it. Find it.<br /><em>Wear it.</em></h1>
+      <p class="subhead">
+        Upload a dress photo and search popular stores for similar styles.
+      </p>
+    </section>
+
+    <section class="finder" aria-label="Find a dress">
+      <div class="upload-panel" id="drop-zone">
+        <input id="file-input" type="file" accept="image/*" hidden />
+
+        <div class="upload-empty" id="upload-empty">
+          <div class="upload-icon">＋</div>
+          <h2>Drop your dress photo here</h2>
+          <p>
+            or
+            <button class="text-button" id="choose-button" type="button">
+              browse files
+            </button>
+          </p>
+          <span class="file-note">JPG, PNG or WEBP · stays on your device</span>
+        </div>
+
+        <img
+          id="preview"
+          class="preview"
+          alt="Your uploaded dress"
+          hidden
+        />
+
+        <button
+          type="button"
+          class="remove-photo"
+          id="remove-photo"
+          aria-label="Remove photo"
+          hidden
+        >×</button>
+      </div>
+
+      <div class="search-panel">
+        <div class="step-label"><span>01</span> ADD YOUR PHOTO</div>
+
+        <label for="description">What details should we look for?</label>
+        <p class="field-help">
+          Describe the dress style, color, or occasion for more relevant store
+          searches.
+        </p>
+
+        <input
+          id="description"
+          type="text"
+          maxlength="120"
+          placeholder="e.g. floral summer midi dress"
+        />
+
+        <button class="search-button" id="search-button" type="button" disabled>
+          <span>Find similar dresses</span>
+          <span aria-hidden="true">↗</span>
+        </button>
+
+        <p class="privacy-note">
+          <span>✦</span> Your photo is previewed locally and is not uploaded.
+        </p>
+      </div>
+    </section>
+
+    <section class="results" id="results" hidden>
+      <div class="results-heading">
+        <div>
+          <p class="eyebrow">YOUR SEARCH IS READY</p>
+          <h2>Explore the look</h2>
+        </div>
+        <p class="query-label" id="query-label"></p>
+      </div>
+
+      <div class="store-grid" id="store-grid"></div>
+
+      <p class="results-note">
+        Searches open each store in a new tab. Results and availability are
+        managed by the stores.
+      </p>
+    </section>
+
+    <aside class="note">
+      <span class="note-icon">✳</span>
+      <p>
+        <strong>How it works</strong><br />
+        This starter app creates product searches from your description. To
+        match products directly from the photo, connect a visual search service
+        or marketplace API.
+      </p>
+    </aside>
+  </main>
+
+  <footer>
+    <span>Dress Finder</span>
+    <span>Find a look you love.</span>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
